@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ModelViewController {
 
-    @GetMapping("/showCriminals"){
+    @GetMapping("/showCriminals")
         public String showCriminals(){
             System.out.println("ModelViewController.showCriminals");
             return "personview";
         }
-    }
 }
