@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CLUEDO</title>
 </head>
 <body>
-<h1>Test</h1>
+<tbody>
+<h1>test</h1>
+<tr th:each="Personen: ${personList}">
+    <td th:text="${item.formOfAddress} + ' ' + ${item.name}"></td>
+    <td th:text="${item.age}"></td>
+    <td th:text="${item.hariColor}"></td>
+    <td th:text="${item.clothColor}"></td>
+</tr>
+</tbody>
 </body>
 </html>

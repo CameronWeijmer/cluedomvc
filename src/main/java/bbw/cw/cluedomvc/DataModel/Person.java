@@ -55,4 +55,15 @@ public class Person {
     public void setClothColor(String clothColor) {
         this.clothColor = clothColor;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", formOfAddress='" + formOfAddress + '\'' +
+                ", age='" + age + '\'' +
+                ", hairColor='" + hairColor + '\'' +
+                ", clothColor='" + clothColor + '\'' +
+                '}';
+    }
 }
