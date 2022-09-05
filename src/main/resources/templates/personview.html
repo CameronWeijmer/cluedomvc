@@ -7,11 +7,11 @@
 <body>
 <tbody>
 <h1>test</h1>
-<tr th:each="Personen: ${personList}">
-    <td th:text="${item.formOfAddress} + ' ' + ${item.name}"></td>
-    <td th:text="${item.age}"></td>
-    <td th:text="${item.hariColor}"></td>
-    <td th:text="${item.clothColor}"></td>
+<tr th:each="Person : ${personList}">
+    <td th:text="${Person.formOfAddress} + ' ' + ${Person.name}"></td>
+    <td th:text="${Person.age}"></td>
+    <td th:text="${Person.hariColor}"></td>
+    <td th:text="${Person.clothColor}"></td>
 </tr>
 </tbody>
 </body>
