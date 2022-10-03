@@ -1,4 +1,4 @@
-package bbw.cw.cluedomvc.DataModel;
+package bbw.cw.cluedomvc.Model;
 
 public class Person {
 

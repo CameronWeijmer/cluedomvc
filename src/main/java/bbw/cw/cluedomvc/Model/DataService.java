@@ -1,4 +1,4 @@
-package bbw.cw.cluedomvc.DataModel;
+package bbw.cw.cluedomvc.Model;
 
 import org.springframework.stereotype.Service;
 
