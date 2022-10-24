@@ -51,9 +51,9 @@ class GameLogicTest {
         secret.setWeapon(0);
         secret.setScene(0);
 
-        suggestion.setActor(0);
-        suggestion.setWeapon(0);
-        suggestion.setScene(0);
+        suggestion.setActor(1);
+        suggestion.setWeapon(1);
+        suggestion.setScene(1);
 
         GameLogic gamelogic = new GameLogic();
 
@@ -121,6 +121,86 @@ class GameLogicTest {
 
     }
 
+    @Test
+    void ActorWeaponEqualSceneNotEqualThenReturnFalseAndHistory2(){
+        int numberOfSuggestion = 0;
+        int maxNumberOfSuggestion = 8;
+
+        secret.setActor(1);
+        secret.setWeapon(1);
+        secret.setScene(1);
+
+        suggestion.setActor(1);
+        suggestion.setWeapon(1);
+        suggestion.setScene(0);
+
+        GameLogic gamelogic = new GameLogic();
+
+        assertEquals(true, gamelogic.evaluateSuggestion(suggestion, secret, numberOfSuggestion, maxNumberOfSuggestion));
+        assertEquals("2", secret.getHistory().get(secret.getHistory().size() -1));
+
+    }
+
+    @Test
+    void ActorSceneEqualWeaponNotEqualThenReturnFalseAndHistory2(){
+        int numberOfSuggestion = 0;
+        int maxNumberOfSuggestion = 8;
+
+        secret.setActor(1);
+        secret.setWeapon(1);
+        secret.setScene(1);
+
+        suggestion.setActor(1);
+        suggestion.setWeapon(0);
+        suggestion.setScene(1);
+
+        GameLogic gamelogic = new GameLogic();
+
+        assertEquals(true, gamelogic.evaluateSuggestion(suggestion, secret, numberOfSuggestion, maxNumberOfSuggestion));
+        assertEquals("2", secret.getHistory().get(secret.getHistory().size() -1));
+
+    }
+
+    @Test
+    void WeaponSceneEqualActorNotEqualThenReturnFalseAndHistory2(){
+        int numberOfSuggestion = 0;
+        int maxNumberOfSuggestion = 8;
+
+        secret.setActor(1);
+        secret.setWeapon(1);
+        secret.setScene(1);
+
+        suggestion.setActor(0);
+        suggestion.setWeapon(1);
+        suggestion.setScene(1);
+
+        GameLogic gamelogic = new GameLogic();
+
+        assertEquals(true, gamelogic.evaluateSuggestion(suggestion, secret, numberOfSuggestion, maxNumberOfSuggestion));
+        assertEquals("2", secret.getHistory().get(secret.getHistory().size() -1));
+
+    }
+
+    @Test
+    void ActorWeaponSceneEqualThenReturnTrueAndHistoryWin(){
+        int numberOfSuggestion = 0;
+        int maxNumberOfSuggestion = 8;
+
+        secret.setActor(1);
+        secret.setWeapon(1);
+        secret.setScene(1);
+
+        suggestion.setActor(0);
+        suggestion.setWeapon(1);
+        suggestion.setScene(1);
+
+        GameLogic gamelogic = new GameLogic();
+
+        assertEquals(true, gamelogic.evaluateSuggestion(suggestion, secret, numberOfSuggestion, maxNumberOfSuggestion));
+        assertEquals("2", secret.getHistory().get(secret.getHistory().size() -1));
+
+        // To be done
+    }
 
 
 }
