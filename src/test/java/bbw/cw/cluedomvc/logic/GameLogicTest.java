@@ -198,9 +198,5 @@ class GameLogicTest {
 
         assertEquals(true, gamelogic.evaluateSuggestion(suggestion, secret, numberOfSuggestion, maxNumberOfSuggestion));
 //        assertEquals("2", secret.getHistory().get(secret.getHistory().size() -1));
-
-        // To be done
     }
-
-
 }

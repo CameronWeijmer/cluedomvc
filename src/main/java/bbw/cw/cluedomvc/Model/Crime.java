@@ -5,21 +5,23 @@ import java.util.List;
 
 /**
  * Crime
+ *
  * @author Cameron Weijmer
  * @version 26.09.2022
  */
-public class Crime{
+public class Crime {
     private int actor = 0;
     private int weapon = 0;
     private int scene = 0;
 
     private List<String> history = new ArrayList<>();
 
-    public void setActor(int i) {
-    }
-
     public int getActor() {
         return actor;
+    }
+
+    public void setActor(int actor) {
+        this.actor = actor;
     }
 
     public int getWeapon() {
@@ -42,8 +44,23 @@ public class Crime{
         return history;
     }
 
-    public void setHistory(List<String> history) {
-        this.history = history;
+    @Override
+    public String toString() {
+        return "Crime{" +
+                "actor=" + actor +
+                ", weapon=" + weapon +
+                ", scene=" + scene +
+                ", history=" + history +
+                '}';
     }
-// to be done... Getter, Setter and more
+
+    public String crimeToString() {
+        return "Crime{" +
+                "actor=" + actor +
+                ", weapon=" + weapon +
+                ", scene=" + scene +
+                '}';
+    }
 }
+// to be done... Getter, Setter and more
+
