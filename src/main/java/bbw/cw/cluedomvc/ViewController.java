@@ -11,13 +11,15 @@ package bbw.cw.cluedomvc;
 import bbw.cw.cluedomvc.logic.GameLogic;
 import bbw.cw.cluedomvc.Model.Crime;
 import bbw.cw.cluedomvc.Model.DataService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ViewController {
-    private DataService service = new DataService();
+    @Autowired
+    private DataService service;
     private GameLogic gameLogic = new GameLogic();
 
     @RequestMapping(value = {"/", "/showView"}, method = RequestMethod.GET)
