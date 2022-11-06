@@ -13,13 +13,6 @@ import bbw.cw.cluedomvc.Model.DataService;
  * @version 26.09.2022
  */
 public class GameLogic {
-
-    /**
-     * Setup randomly the secret of the game.
-     *
-     * @param service Contains the list for actors, weapons and scenes.
-     * @param secret  Randomly generate the secret for actor, weapon and scene.
-     */
     public void setupNewGame(DataService service, Crime secret) {
         Random random = new Random();
         secret.setActor(random.nextInt(service.getPersons().size()));
@@ -28,18 +21,34 @@ public class GameLogic {
         System.out.println("Gamelogic.setupNewGame " + secret);
     }
 
-    /**
-     * Evaluates the suggestion to find the solution of the game.
-     *
-     * @param suggestion             The suggestion from the player
-     * @param secret                 The game secret.
-     * @param numberOfSuggestion     Current number of suggestion
-     * @param maxNumberOfSuggestions Max number of possible suggestions
-     * @return true if games ends, false if another suggestion is allowed
-     */
     public boolean evaluateSuggestion(Crime suggestion, Crime secret, int numberOfSuggestion,
                                       int maxNumberOfSuggestions) {
-        //To be done
+        int right = 0;
+
+        if (suggestion.getWeapon() == secret.getWeapon()) {
+            right++;
+        }
+
+        if (suggestion.getActor() == secret.getActor()) {
+            right++;
+        }
+
+        if (suggestion.getScene() == secret.getScene()) {
+            right++;
+        }
+
+        if (right == 3) {
+            suggestion.getHistory().add(
+                    "WIN, found correct answer: actor " + secret.getActor()
+                            + " Weapon: " + secret.getWeapon()
+                            + " Scene: " + secret.getScene());
+            return true;
+        } else if (numberOfSuggestion >= maxNumberOfSuggestions) {
+            suggestion.getHistory().add("Failed, no more suggestions available");
+            return true;
+        }
+        suggestion.getHistory().add("Correct: " + right + "Come on!");
+
         return false;
     }
 }
