@@ -2,6 +2,12 @@ package bbw.cw.cluedomvc.Model;
 
 import java.awt.*;
 
+/**
+ * Person
+ *
+ * @author Cameron Weijmer
+ * @version 06.11.2022
+ */
 public class Person {
     private String name;
     private String formOfAddress;

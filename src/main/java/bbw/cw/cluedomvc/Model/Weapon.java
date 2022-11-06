@@ -1,5 +1,10 @@
 package bbw.cw.cluedomvc.Model;
-
+/**
+ * Weapon
+ *
+ * @author Cameron Weijmer
+ * @version 06.11.2022
+ */
 public class Weapon {
     private String description;
     private String material;

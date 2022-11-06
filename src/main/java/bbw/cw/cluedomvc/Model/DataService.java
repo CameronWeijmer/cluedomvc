@@ -5,6 +5,12 @@ import org.springframework.stereotype.Service;
 import java.awt.*;
 import java.util.List;
 
+/**
+ * DataService
+ *
+ * @author Cameron Weijmer
+ * @version 06.11.2022
+ */
 @Service
 public class DataService {
     private final List<Person> persons = List.of(

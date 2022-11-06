@@ -1,13 +1,11 @@
 package bbw.cw.cluedomvc;
 
-/*
- *   ModelViewController
+/**
+ * ViewController
  *
  * @author Cameron Weijmer
- * @version 04.09.2022
- *
- * */
-
+ * @version 06.11.2022
+ */
 import bbw.cw.cluedomvc.logic.GameLogic;
 import bbw.cw.cluedomvc.Model.Crime;
 import bbw.cw.cluedomvc.Model.DataService;

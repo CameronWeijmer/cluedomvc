@@ -1,5 +1,11 @@
 package bbw.cw.cluedomvc.Model;
 
+/**
+ * Room
+ *
+ * @author Cameron Weijmer
+ * @version 06.11.2022
+ */
 public class Room {
     private String description;
     private String floorCover;
